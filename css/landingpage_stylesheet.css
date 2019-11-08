@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url("image/background.png");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    font-family: roboto;
+    justify-content: center;
+    align-items: center;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: roboto;
+    font-size: 16pt;
+    position: relative;
+    left: 200px;
+    background-color: rgba(0, 0, 0, 0.5);    
+}
+
+h1 {
+    color: rgb();
+    margin-bottom: 70px;
+    font-size: 45px;
+    letter-spacing: 2px;
+    text-align: center;
+    text-shadow: 20px 20px 10px solid black;
+    margin: 20px 20px;
+}
+
+.search-bar {
+    height: 50px;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    outline: none;
+    width: 500px;
+    box-shadow: 20px 20px 20px solid black;
+    margin: 20px 10px;
+}
+
+.search-btn {
+    height: 50px;
+    width: 150px;
+    background: #d06b5e;
+    border: none;
+    color: #000;
+    border-radius: 15px;
+    margin: 20px 10px;
+}
+
+.login {
+    height: 50px;
+    width: 150px;
+    background: #bfbfbf;
+    border: none;
+    color: #000;
+    border-radius: 15px;
+}
+
+.register {
+    height: 50px;
+    width: 150px;
+    background: #ffbbb1;
+    border: none;
+    color: #000;
+    border-radius: 15px;
+}
+
+.buttons {
+    position: relative;
+    top: -270px;
+    left: 170px;
+}
+
+.nav nav-pills{
+    position:relative;
+    top: -270px;
+    left: 170px;
+}
+
+@media screen and (max-width: 320px) {
+    
+}
