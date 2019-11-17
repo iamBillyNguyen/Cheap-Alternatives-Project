@@ -11,6 +11,8 @@
 
 #content-wrapper {
     background-image: url('image/bathroom-background.jpg');
+    background-position: center;
+    background-size: cover;
     width: 100%;
     height: 500px;
     display: flex;
@@ -23,7 +25,7 @@
 .header {
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 98.5%;
     height: 100px;
     background-color: rgba(0, 0 , 0 , 0.3);
     padding: 10px 10px;
@@ -31,8 +33,17 @@
 
 .header > h1 {
     text-align: center;
-    margin-left: 450px;
+    margin-left: 420px;
     margin-top: 40px;
+}
+
+.header > p {
+    font-size: 15pt;
+}
+
+#content-wrapper {
+    width: 100%;
+    height: 505px;
 }
 
 #content {
@@ -56,4 +67,198 @@
     background-color: white;
     margin-left: 110px;
     margin-bottom: 10px;
+}
+
+/* Iphones 5/SE */
+@media screen and (max-width: 320px) {
+    * {font-size: 1.0rem;}
+
+    .header {
+        width: 93.8%;
+        height: 120px;
+    }
+    
+    .header > h1 {
+        font-size: 2.0rem;
+        margin-left: 0px;
+        transform: translateX(-50px);
+    }
+
+    #content {
+        background-color: rgba(0, 0 , 0 , 0);
+        margin-top: -25px;
+    }
+
+    .bathroom {
+        transform: translateX(-125px);
+        width: 110%;
+        height: 50px;
+        margin-bottom: 15px;
+    }
+}
+
+/* Galaxy S5*/
+@media screen and (max-width: 360px) and (min-width: 321px) {
+    * {font-size: 1.1rem;}
+
+    .header {
+        width: 94.5%;
+        height: 120px;
+    }
+    
+    .header > h1 {
+        font-size: 1.9rem;
+        margin-left: 0px;
+        transform: translateX(-50px);
+    }
+
+    #content {
+        background-color: rgba(0, 0 , 0 , 0);
+        margin-top: -25px;
+    }
+
+    .bathroom {
+        transform: translateX(-125px);
+        width: 110%;
+        height: 50px;
+        margin-bottom: 15px;
+    }
+}
+
+/* Iphone 6/7/8 + X*/
+@media screen and (max-width: 375px) and (min-width: 361px) {
+    * {font-size: 1.1rem;}
+
+    .header {
+        width: 94.7%;
+        height: 120px;
+    }
+    
+    .header > h1 {
+        font-size: 1.9rem;
+        margin-left: 0px;
+        transform: translateX(-50px);
+    }
+
+    #content-wrapper {
+        height: 680px;
+    }
+
+    #content {
+        background-color: rgba(0, 0 , 0 , 0);
+        margin-top: -120px;
+    }
+
+    .bathroom {
+        transform: translateX(-125px);
+        width: 110%;
+        height: 50px;
+        margin-bottom: 30px;
+    }
+}
+
+/* Pixel 2 + XL*/
+@media screen and (max-width: 414px) and (min-width: 376px) {
+    * {font-size: 1.1rem;}
+
+    .header {
+        width: 95.2%;
+        height: 120px;
+    }
+    
+    .header > h1 {
+        font-size: 1.9rem;
+        margin-left: 0px;
+        transform: translateX(-50px);
+    }
+
+    #content-wrapper {
+        height: 680px;
+    }
+
+    #content {
+        background-color: rgba(0, 0 , 0 , 0);
+        margin-top: -140px;
+    }
+
+    .bathroom {
+        transform: translateX(-125px);
+        width: 110%;
+        height: 60px;
+        margin-bottom: 20px;
+    }
+}
+
+/* Ipad*/
+@media screen and (max-width: 768px) and (min-width: 415px) {
+    * {font-size: 1.5rem;}
+
+    .header {
+        width: 97.4%;
+        height: 120px;
+    }
+    
+    .header > h1 {
+        margin-top: 55px;
+        font-size: 1.9rem;
+        margin-left: 0px;
+        transform: translateX(-10px);
+    }
+
+    .header > p {
+        font-size: 1.5rem;
+    }
+
+    #content-wrapper {
+        height: 1024px;
+    }
+
+    #content {
+        background-color: rgba(0, 0 , 0 , 0);
+        margin-top: -130px;
+    }
+
+    .bathroom {
+        transform: translateX(-125px);
+        width: 110%;
+        height: 110px;
+        margin-bottom: 50px;
+    }
+}
+
+/* Ipad Pro*/
+@media screen and (max-width: 1024px) and (min-width: 769px) {
+    * {font-size: 1.6rem;}
+
+    .header {
+        width: 98%;
+        height: 120px;
+    }
+    
+    .header > h1 {
+        margin-top: 55px;
+        font-size: 1.9rem;
+        margin-left: 0px;
+        transform: translateX(120px);
+    }
+
+    .header > p {
+        font-size: 1.5rem;
+    }
+
+    #content-wrapper {
+        height: 1366px;
+    }
+
+    #content {
+        background-color: rgba(0, 0 , 0 , 0);
+        margin-top: -150px;
+    }
+
+    .bathroom {
+        transform: translateX(-125px);
+        width: 110%;
+        height: 130px;
+        margin-bottom: 80px;
+    }
 }
