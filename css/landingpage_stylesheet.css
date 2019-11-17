@@ -100,22 +100,14 @@ h1 {
         grid-column: 1 / span 3;
     }
 
-    .search-bar {
-        width: 250%;
-        font-size: 0.9rem;
-    }
     
     .search-btn {
-        font-size: 1.0rem;
-        width: 90%;
-        transform: translateX(90px);
-        margin-top: -3%;
+        font-size: 1.2rem;
+        width: 80%;
+        height: 70px;
+        margin-top: 5%;
     }
 
-    #form-box {
-        width: 40%;
-        transform: translateX(-8px);
-    }
     .header > h1 {
         font-size: 2.0rem;
         padding: 0% 5%;  
@@ -152,23 +144,15 @@ h1 {
         background-color: rgba(0, 0, 0, 0);
         grid-column: 1 / span 3;
     }
-
-    .search-bar {
-        width: 250%;
-        font-size: 0.8rem;
-    }
     
     .search-btn {
         font-size: 1.0rem;
         width: 90%;
-        transform: translateX(110px);
-        margin-top: -3%;
+        padding: 0px 20px;
+        margin-top: -5%;
+        transform: translateY(50px);
     }
 
-    #form-box {
-        width: 40%;
-        transform: translateX(-8px);
-    }
     .header > h1 {
         font-size: 2.1rem;
         padding: 0% 5%;
@@ -206,25 +190,14 @@ h1 {
         background-color: rgba(0, 0, 0, 0);
         grid-column: 1 / span 3;
     }
-
-    .search-bar {
-        width: 260%;
-        font-size: 0.9rem;
-        height: 90px
-    }
     
     .search-btn {
         font-size: 1.0rem;
         width: 90%;
-        height: 80px;
-        transform: translateX(170px);
-        margin-top: -3%;
+        margin-top: -10%;
+        transform: translateY(100px);
     }
 
-    #form-box {
-        width: 40%;
-        transform: translateX(-8px);
-    }
     .header > h1 {
         font-size: 2.1rem;
         padding: 0% 5%;

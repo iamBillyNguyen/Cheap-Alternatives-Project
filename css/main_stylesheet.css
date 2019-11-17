@@ -1,0 +1,42 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+#container {
+    display: flex;
+    flex-direction: column;
+    font-family: roboto;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100px;
+    background-color: lightseagreen;
+    padding: 10px 10px;
+}
+
+.header > h1 {
+    text-align: center;
+    margin-left: 450px;
+    margin-top: 40px;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    background-color: limegreen;
+    padding: 10px 10px;
+    justify-items: center;
+    justify-content: center;
+}
+
+.bathroom {
+    text-align: center;
+    width: 50%;
+    padding: 10px 10px;
+    background-color: white;
+    margin-left: 350px;
+    margin-bottom: 10px;
+}
