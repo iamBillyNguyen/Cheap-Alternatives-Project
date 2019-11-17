@@ -78,6 +78,12 @@ h1 {
     margin-right: 15px;
 }
 
+ul {
+    display: flex;
+    justify-content: flex-end;
+    align-content: center;
+}
+
 .register {
     height: 50px;
     width: 150px;
