@@ -2,10 +2,22 @@
     padding: 0;
     margin: 0;
 }
+
 #container {
     display: flex;
     flex-direction: column;
     font-family: roboto;
+}
+
+#content-wrapper {
+    background-image: url('image/bathroom-background.jpg');
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;    
 }
 
 .header {
@@ -13,7 +25,7 @@
     flex-direction: row;
     width: 100%;
     height: 100px;
-    background-color: lightseagreen;
+    background-color: rgba(0, 0 , 0 , 0.3);
     padding: 10px 10px;
 }
 
@@ -26,17 +38,22 @@
 #content {
     display: flex;
     flex-direction: column;
-    background-color: limegreen;
+    background-color: rgba(0, 0 , 0 , 0.5);
     padding: 10px 10px;
+    width: 65%;
+    height: 500px;
     justify-items: center;
     justify-content: center;
 }
 
 .bathroom {
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
     text-align: center;
-    width: 50%;
+    width: 70%;
     padding: 10px 10px;
     background-color: white;
-    margin-left: 350px;
+    margin-left: 110px;
     margin-bottom: 10px;
 }
