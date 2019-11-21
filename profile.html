@@ -84,6 +84,9 @@
 
 
 
+
+
+
         var currentTab = 0; // Current tab is set to be the first tab (0)
         showTab(currentTab); // Display the current tab
 
@@ -156,6 +159,30 @@
 
             x[n].className += " active";
         }
+
+        //Reads the likes of the location
+        var bathroomLikes = firebase.database().ref('bathrooms/' + 'Gas Station' + '/likes');
+        bathroomLikes.on('value', function (snapshot) {
+            updateLikes(postElement, snapshot.val());
+        });
+
+        //Reads the Dislikes for a location
+        var bathroomDislikes = firebase.database().ref('bathrooms/' + 'Gas Station' + '/dislikes');
+        bathroomDislikes.on('value', function (snapshot) {
+            updateDislikes(postElement, snapshot.val());
+        });
+
+        //Reads the Location
+        var bathroomLocation = firebase.database().ref('bathrooms/' + 'Gas Station' + '/location');
+        bathroomLocation.on('value', function (snapshot) {
+            updateLocation(postElement, snapshot.val());
+        });
+
+        //Reads the Name of the location
+        var bathroomName = firebase.database().ref('bathrooms/' + 'Gas Station' + '/name');
+        bathroomName.on('value', function (snapshot) {
+            updateName(postElement, snapshot.val());
+        });
     </script>
 
 </body>
