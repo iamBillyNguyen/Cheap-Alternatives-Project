@@ -1,55 +1,105 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <title>Main</title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/main_stylesheet.css" type="text/css" />
-    </head>
+<head>
+    <title>Main</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main_stylesheet.css" type="text/css" />
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
 
-    <body>
-        <!-- MOHIB! THE COMMENTS ARE WHERE YOU SHOULD READ OUR FIREBASE TO-->
-        <!-- YOU CAN VIEW THE IN-CLASS EXERCISE WE DID WITH CARLY, SHE DEMONSTRATED HOW TO WRITE AND READ -->
-        <div id="container">
-            <div class="header">
-                <p>Welcome + <!-- USER'S NAME --></p>
-                <h1>Bathrooms Around You</h1>
-            </div>
-            <div id="content-wrapper">
-                <div id="content">
-                    <div class="bathroom">
-                        <h3 id="name1"><!-- NAME OF BATHROOM --></h3>
-                        <p id="rating1"><!-- BATHROOM DESCRIPTION + RATINGS--></p>
-                        <p id="location1"><!-- BATHROOM LOCATION --></p>
-                    </div>
-                    <!-- SAME FOR OTHER BATHROOMS -->
-                    <div class="bathroom">                                      
-                        <h3 id="name2">Pacific CF - Downtown</h3>
-                        <p id="rating2">Very clean, private, high-end</p>
-                        <p id="location2">First floor, near Louis Vuition</p>
-                    </div>
-                    <div class="bathroom">
-                        <h3 id="name3">Pacific CF - Downtown</h3>
-                        <p id="rating3">Very clean, private, high-end</p>
-                        <p id="location3">First floor, near Louis Vuition</p>
-                    </div>
-                    <div class="bathroom">
-                        <h3 id="name4">Pacific CF - Downtown</h3>
-                        <p id="rating4">Very clean, private, high-end</p>
-                        <p id="location4">First floor, near Louis Vuition</p>
-                    </div>
-                    <div class="bathroom">
-                        <h3 id="name5">Pacific CF - Downtown</h3>
-                        <p id="rating5">Very clean, private, high-end</p>
-                        <p id="location5">First floor, near Louis Vuition</p>
-                    </div>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+    <!--Include Firebase related things-->
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-auth.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyD_pDCpAP6mtBObEgjgFJWQ7uDmeAZt8ng",
+            authDomain: "washlab-e7c59.firebaseapp.com",
+            databaseURL: "https://washlab-e7c59.firebaseio.com",
+            projectId: "washlab-e7c59",
+            storageBucket: "washlab-e7c59.appspot.com",
+            messagingSenderId: "832183689756",
+            appId: "1:832183689756:web:6a44c4e8616fe77e0ef5d9"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore();
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <div class="header">
+            <p>Welcome
+                <!-- USER'S NAME -->
+            </p>
+            <h1>Bathrooms Around You</h1>
+        </div>
+        <div id="content-wrapper">
+            <div id="content">
+                <div class="bathroom">
+                    <!-- NAME OF BATHROOM -->
+                    <h3><span id="name1"></span></h3>
+                    <!-- RATING OF BATHROOM -->
+                    <p><span id="rating1"></span></p>
+                    <!-- LOCATION OF BATHROOM-->
+                    <p><span id="location1"></span></p>
                 </div>
             </div>
+            <div id="content">
+                <div class="bathroom">
+                    <!-- NAME OF BATHROOM -->
+                    <h3><span id="name2"></span></h3>
+                    <!-- RATING OF BATHROOM -->
+                    <p><span id="rating2"></span></p>
+                    <!-- LOCATION OF BATHROOM-->
+                    <p><span id="location2"></span></p>
+                </div>
+            </div>
+            <div id="content">
+                <div class="bathroom">
+                    <!-- NAME OF BATHROOM -->
+                    <h3><span id="name3"></span></h3>
+                    <!-- RATING OF BATHROOM -->
+                    <p><span id="rating3"></span></p>
+                    <!-- LOCATION OF BATHROOM-->
+                    <p><span id="location3"></span></p>
+                </div>
+            </div>
+            <div id="content">
+                <div class="bathroom">
+                    <!-- NAME OF BATHROOM -->
+                    <h3><span id="name4"></span></h3>
+                    <!-- RATING OF BATHROOM -->
+                    <p><span id="rating4"></span></p>
+                    <!-- LOCATION OF BATHROOM-->
+                    <p><span id="location4"></span></p>
+                </div>
+            </div>
+        </div>
 
-            <script>
-
-            </script>
-    </body>
+        <script>
+            db.collection("Bathroom").doc("dt.0001").onSnapshot(function (snap) {
+                console.log("Current data is ... ", snap.data().name);
+                document.getElementById("name1").innerHTML = snap.data().name; //Get name value from document
+                document.getElementById("rating1").innerHTML = snap.data()
+                .rating; //Get rating value from document
+                document.getElementById("location1").innerHTML = snap.data()
+                .location; //Get location value from document
+            });
+        </script>
+</body>
 
 </html>
