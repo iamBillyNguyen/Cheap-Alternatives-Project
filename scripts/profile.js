@@ -18,8 +18,10 @@ $(document).ready(function () {
         console.log("Hello");
         var formEmail = $("#email").val();
         var formPassword = $("#password").val();
-        var formFirstName = $("firstName").val();
-        var formPhone = $("phoneNumber").val();
+        var formFirstName = $("#firstName").val();
+        var formPhone = $("#phoneNumber").val();
+        console.log(formEmail);
+        console.log(formFirstName);
 
         firebase.auth().createUserWithEmailAndPassword(formEmail, formPassword)
         .then(function(user) {
@@ -35,7 +37,7 @@ $(document).ready(function () {
                     phoneNumber: formPhone
                 }, {merge: true});
 
-                console.log(userData);
+                
             })
 
         })
