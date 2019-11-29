@@ -39,7 +39,8 @@ $(document).ready(function () {
                             phoneNumber: formPhone
                         }, {
                             merge: true
-                        });
+                        })
+                        window.location ="../landing.html";
 
 
                 })

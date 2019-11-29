@@ -33,7 +33,8 @@ $(document).ready(function () {
         };
 
         firebase.auth().onAuthStateChanged(function (user) {
-                db.collection("Bathroom")
+                
+                db.collection("Bathroom").doc("" + i)
                     .add(bathroom);
             })
     });
