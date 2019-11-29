@@ -29,12 +29,15 @@
 
 <body>
     <div id="container">
-        <div class="header">
+        <header class="header">
             <p>Welcome
                 <!-- USER'S NAME -->
             </p>
             <h1>Bathrooms Around You</h1>
-        </div>
+        </header>
+        <main>
+
+        </main>
         <div id="content-wrapper">
             <div id="content">
                 <div class="bathroom">
@@ -148,9 +151,10 @@
                         var loc = doc.data().location;
                         var rating = doc.data().rating;
                         var like = doc.data().Like;
+                        var bathroom = $('<div class="bathroom">');
                         var tr = $("<tr>").append('<td>' + n + '</th>').append('<td>' + loc + '</td>')
                             .append('<td>' + rating + '</td>').append('<td>' + like + '</td>');
-                        $(".data").append(tr);
+                        $("#content").append(tr);
                     });
                 });
         }
