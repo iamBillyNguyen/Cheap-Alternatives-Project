@@ -14,16 +14,13 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    width: 100%;
-    height: 1000px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-items: center;
-    justify-content: center;    
+    justify-items: center;  
+    width: 100%;
+    height: 1000px; 
 }
-
-
 
 #display td {
     color: white;
@@ -34,7 +31,7 @@
     flex-direction: row;
     width: 98.5%;
     height: 100px;
-    background-color: rgba(0, 0 , 0 , 0.3);
+    background-color: #72a5cc;
     padding: 10px 10px;
 }
 
@@ -48,24 +45,36 @@
     font-size: 15pt;
 }
 
-#content-wrapper {
-    width: 100%;
-    height: 505px;
+.review {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.review > p {
+    margin: 5px 20px;
 }
 
 .like {
     max-width: 4%;
 }
 
-#content {
+.comments {
+    border: 
+}
+
+.content {
     display: flex;
     flex-direction: column;
     background-color: rgba(0, 0 , 0 , 0.5);
     padding: 10px 10px;
     width: 65%;
-    height: 1000px;
-    justify-items: center;
-    justify-content: center;
+    height: 800px;
+    /* justify-items: center;
+    justify-content: center; */
+    /* align-items: center; */
+    /* overflow: scroll;  */
 }
 
 
