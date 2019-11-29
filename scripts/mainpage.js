@@ -18,7 +18,7 @@ db.collection("Bathroom").doc("dt.0001").onSnapshot(function (snap) {
         .Like; //Get like
     console.log("Current likes: ", snap.data().Like);
 
-    setAddListener();
+    setAddListener("dt.0001");
 });
 
 db.collection("Bathroom").doc("bcit.0001").onSnapshot(function (snap) {
@@ -33,7 +33,7 @@ db.collection("Bathroom").doc("bcit.0001").onSnapshot(function (snap) {
         .Like; //Get like
     console.log("Current likes: ", snap.data().Like);
 
-    setAddListener();
+    setAddListener("bcit.0001");
 });
 
 db.collection("Bathroom").doc("dt.0002").onSnapshot(function (snap) {
@@ -48,7 +48,7 @@ db.collection("Bathroom").doc("dt.0002").onSnapshot(function (snap) {
         .Like; //Get like
     console.log("Current likes: ", snap.data().Like);
 
-    setAddListener4();
+    setAddListener("dt.0002");
 });
 
 db.collection("Bathroom").doc("bcit.0001").onSnapshot(function (snap) {
@@ -63,7 +63,7 @@ db.collection("Bathroom").doc("bcit.0001").onSnapshot(function (snap) {
         .Like; //Get like
     console.log("Current likes: ", snap.data().Like);
 
-    setAddListener2();
+    setAddListener("bcit.0001");
 });
 
 db.collection("Bathroom").doc("bcit.0002").onSnapshot(function (snap) {
@@ -78,76 +78,29 @@ db.collection("Bathroom").doc("bcit.0002").onSnapshot(function (snap) {
         .Like; //Get like
     console.log("Current likes: ", snap.data().Like);
 
-    setAddListener3();
+    setAddListener("bcit.0002");
 });
 
 
-function showLikes() {
+function showLikes(n) {
     firebase.auth().onAuthStateChanged(function (user) {
-        db.collection("Bathroom").doc("dt.0001")
+        db.collection("Bathroom")
+        .doc("b"+n)
             .onSnapshot(function (d) {
-                console.log("Current data: ", d.data());
-                if (d.get("Like") != null)
-                    x = d.data()["Like"];
-                else
-                    x = 0; // user has not added any cups yet
-                console.log(x);
-                document.getElementById("likes1").innerHTML = x;
+                console.log("Current data: ", d.data().likes);
+                document.getElementById(("likes"+n).innerHTML = d.data().likes);
             });
     })
 }
 
-function showLikes2() {
-    firebase.auth().onAuthStateChanged(function (user) {
-        db.collection("Bathroom").doc("bcit.0001")
-            .onSnapshot(function (d) {
-                console.log("Current data: ", d.data());
-                if (d.get("Like") != null)
-                    x = d.data()["Like"];
-                else
-                    x = 0; // user has not added any cups yet
-                console.log(x);
-                document.getElementById("likes2").innerHTML = x;
-            });
-    })
-}
 
-function showLikes3() {
-    firebase.auth().onAuthStateChanged(function (user) {
-        db.collection("Bathroom").doc("bcit.0002")
-            .onSnapshot(function (d) {
-                console.log("Current data: ", d.data());
-                if (d.get("Like") != null)
-                    x = d.data()["Like"];
-                else
-                    x = 0; // user has not added any cups yet
-                console.log(x);
-                document.getElementById("likes3").innerHTML = x;
-            });
-    })
-}
+function setAddListener(n) {
+    document.getElementById("bathroom"+n).addEventListener("click", function (e) {
 
-function showLikes4() {
-    firebase.auth().onAuthStateChanged(function (user) {
-        db.collection("Bathroom").doc("dt.0002")
-            .onSnapshot(function (d) {
-                console.log("Current data: ", d.data());
-                if (d.get("Like") != null)
-                    x = d.data()["Like"];
-                else
-                    x = 0; // user has not added any cups yet
-                console.log(x);
-                document.getElementById("likes4").innerHTML = x;
-            });
-    })
-}
-
-function setAddListener() {
-    document.getElementById("bathroom1").addEventListener("click", function (e) {
-
-        var like = db.collection("Bathroom").doc("dt.0001");
+        var like = db.collection("Bathroom").doc("b"+n);
 
         var increment = firebase.firestore.FieldValue.increment(1);
+        console.log("showing" + increment);
 
         e.preventDefault();
 
@@ -156,69 +109,6 @@ function setAddListener() {
             })
             .then(function () {
                 showLikes();
-            })
-            .catch(function (error) {
-                console.error("Error writing document: ", error);
-            });
-    });
-}
-
-function setAddListener2() {
-    document.getElementById("bathroom2").addEventListener("click", function (e) {
-
-        var like = db.collection("Bathroom").doc("bcit.0001");
-
-        var increment = firebase.firestore.FieldValue.increment(1);
-
-        e.preventDefault();
-
-        like.update({
-                Like: increment
-            })
-            .then(function () {
-                showLikes2();
-            })
-            .catch(function (error) {
-                console.error("Error writing document: ", error);
-            });
-    });
-}
-
-function setAddListener3() {
-    document.getElementById("bathroom3").addEventListener("click", function (e) {
-
-        var like = db.collection("Bathroom").doc("bcit.0002");
-
-        var increment = firebase.firestore.FieldValue.increment(1);
-
-        e.preventDefault();
-
-        like.update({
-                Like: increment
-            })
-            .then(function () {
-                showLikes3();
-            })
-            .catch(function (error) {
-                console.error("Error writing document: ", error);
-            });
-    });
-}
-
-function setAddListener4() {
-    document.getElementById("bathroom4").addEventListener("click", function (e) {
-
-        var like = db.collection("Bathroom").doc("dt.0002");
-
-        var increment = firebase.firestore.FieldValue.increment(1);
-
-        e.preventDefault();
-
-        like.update({
-                Like: increment
-            })
-            .then(function () {
-                showLikes3();
             })
             .catch(function (error) {
                 console.error("Error writing document: ", error);
