@@ -22,21 +22,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-    <script>
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
-            apiKey: "AIzaSyD_pDCpAP6mtBObEgjgFJWQ7uDmeAZt8ng",
-            authDomain: "washlab-e7c59.firebaseapp.com",
-            databaseURL: "https://washlab-e7c59.firebaseio.com",
-            projectId: "washlab-e7c59",
-            storageBucket: "washlab-e7c59.appspot.com",
-            messagingSenderId: "832183689756",
-            appId: "1:832183689756:web:6a44c4e8616fe77e0ef5d9"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        var db = firebase.firestore();
-    </script>
+    <script src="scripts/firebase-config.js"></script>
 </head>
 
 <body>
@@ -48,7 +34,7 @@
         <div class="buttons">
             <button class="login" onclick="window.location.href='login.html'">Login</button> 
             <a href="profile.html"></a>
-            <button class="register" onclick="window.location.href='profile.html'">Register</button> 
+            <button class="register" onclick="window.location.href='register.html'">Register</button> 
         </div>
     </div>
 </body>

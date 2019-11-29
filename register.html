@@ -5,7 +5,9 @@
     <title>profile</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main_stylesheet.css" type="text/css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main_stylesheet.css">
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
 
@@ -22,34 +24,35 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-    <!-- <script>
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
-            apiKey: "AIzaSyD_pDCpAP6mtBObEgjgFJWQ7uDmeAZt8ng",
-            authDomain: "washlab-e7c59.firebaseapp.com",
-            databaseURL: "https://washlab-e7c59.firebaseio.com",
-            projectId: "washlab-e7c59",
-            storageBucket: "washlab-e7c59.appspot.com",
-            messagingSenderId: "832183689756",
-            appId: "1:832183689756:web:6a44c4e8616fe77e0ef5d9"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        var db = firebase.firestore();
-    </script> -->
+    <script src="scripts/firebase-config.js"></script>
 </head>
 
 <body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Register</h1>
+        </div>
+        <div class="container-fluid">
+            <form id="newUser">
+                <div class="form-group">
+                    <input class="form-control" id="email" placeholder="Email" name="email" type="email">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" id="password" placeholder="Password" name="pword" type="password">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" id="firstName" placeholder="First Name" name="fname" type="text">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" id="phoneNumber" placeholder="Phone Number" name="phone">
+                </div>
+                <button class="btn btn-primary" type="submit" id="submit">Submit</button>
+            </form>
+        </div>
 
-    <form id="newUser">
-        <h1>Register:</h1>
-        <input id="email" placeholder="E-Mail" name="email" type="email">
-        <input id="password" placeholder="Password" name="pword" type="password">
-        <input id="firstName" placeholder="First Name" name="fname" type="text">
-        <input id="phoneNumber" placeholder="phoneNumber" name="phone">
-        <button type="submit" id="submit">Submit</button>
-    </form>
-    
+    </div>
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="/scripts/profile.js"></script>
 
