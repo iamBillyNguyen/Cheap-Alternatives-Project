@@ -1,0 +1,235 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    background-image: url("image/bathroom-background.jpg");
+    background-position: center;
+    background-size: cover;
+    font-family: roboto;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: 22.5vw 50vw 22.5vw;
+    grid-template-rows: auto auto auto;
+    width: 100%;
+    height: 100vh;  
+    overflow: hidden;
+    justify-items: center;
+    justify-content: center;
+}
+
+.header {
+    grid-column: 2 / span 1;    
+    grid-row: 2 / span 1;
+    padding: 0px 10px;
+    font-family: roboto;
+    font-size: 16pt;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: rgb();
+    margin-bottom: 70px;
+    font-size: 45px;
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 20px 20px;
+    padding-top: 20px;
+}
+
+.search-btn {
+    height: 80px;
+    width: 450px;
+    font-size: 24pt;
+    background: #72a5cc;
+    border: none;
+    color: solid black;
+    border-radius: 15px;
+    margin: 20px 10px;
+    padding: 0px 10px;
+}
+
+
+.buttons {
+    grid-column: 3 / span 1;
+    grid-row: 1 / span 1;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+}
+
+.login {
+    height: 50px;
+    width: 150px;
+    background: #bfbfbf;
+    border: none;
+    color: #000;
+    border-radius: 15px;
+    margin-right: 15px;
+}
+
+ul {
+    display: flex;
+    justify-content: flex-end;
+    align-content: center;
+}
+
+.register {
+    height: 50px;
+    width: 150px;
+    background: #72a5cc;
+    border: none;
+    color: #000;
+    border-radius: 15px;
+}
+
+/* Iphones X to SE models + Samsung Galaxy */
+@media screen and (max-width: 375px) and (min-width: 320px) {
+    * { 
+        font-size: 1.2rem; 
+    }
+
+    .header {
+        width: 100%;
+        height: 150px;
+        background-color: rgba(0, 0, 0, 0);
+        grid-column: 1 / span 3;
+    }
+
+    
+    .search-btn {
+        font-size: 1.2rem;
+        width: 80%;
+        height: 70px;
+        margin-top: 5%;
+    }
+
+    .header > h1 {
+        font-size: 2.0rem;
+        padding: 0% 5%;  
+    }
+
+    .buttons {
+        grid-column: 1 / span 3;
+        grid-row: 1 / span 1;
+        width: 80%;
+        margin-top: 2%;
+    }
+    
+    .login {
+        font-size: 1.0rem;
+        width: 80%;
+        margin-right: 3%;
+    }
+    
+    .register {
+        font-size: 1.0rem;
+        width: 80%;
+    }
+}
+
+/* Pixel 2XL + Pixel 2*/
+@media screen and (max-width: 414px) and (min-width: 411px) {
+    * { 
+        font-size: 1.5rem; 
+    }
+
+    .header {
+        width: 100%;
+        height: 150px;
+        background-color: rgba(0, 0, 0, 0);
+        grid-column: 1 / span 3;
+    }
+    
+    .search-btn {
+        font-size: 1.0rem;
+        width: 90%;
+        padding: 0px 20px;
+        margin-top: -5%;
+        transform: translateY(50px);
+    }
+
+    .header > h1 {
+        font-size: 2.1rem;
+        padding: 0% 5%;
+        transform: translateX(-10px);  
+    }
+
+    .buttons {
+        grid-column: 1 / span 3;
+        grid-row: 1 / span 1;
+        width: 80%;
+        margin-top: 2%;
+    }
+    
+    .login {
+        font-size: 1.0rem;
+        width: 80%;
+        margin-right: 3%;
+    }
+    
+    .register {
+        font-size: 1.0rem;
+        width: 80%;
+    }
+}
+
+/* Ipad Pro + Ipad*/
+@media screen and (max-width: 1024px) and (min-width: 415px) {
+    * { 
+        font-size: 2.4rem; 
+    }
+
+    .header {
+        width: 100%;
+        height: 150px;
+        background-color: rgba(0, 0, 0, 0);
+        grid-column: 1 / span 3;
+    }
+    
+    .search-btn {
+        font-size: 1.0rem;
+        width: 90%;
+        margin-top: -10%;
+        transform: translateY(100px);
+    }
+
+    .header > h1 {
+        font-size: 2.1rem;
+        padding: 0% 5%;
+        transform: translateX(-10px);  
+    }
+
+    .buttons {
+        grid-column: 1 / span 3;
+        grid-row: 1 / span 1;
+        width: 80%;
+        margin-top: 2%;
+    }
+    
+    .login {
+        font-size: 1.0rem;
+        width: 80%;
+        height: 80px;
+        margin-right: 3%;
+    }
+    
+    .register {
+        font-size: 1.0rem;
+        width: 80%;
+        height: 80px;
+    }
+}
+
+
+
