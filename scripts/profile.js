@@ -9,8 +9,10 @@ $(document).ready(function () {
         messagingSenderId: "832183689756",
         appId: "1:832183689756:web:6a44c4e8616fe77e0ef5d9"
     };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
+    if(!firebase.apps.length) {
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        }
     var db = firebase.firestore();
 
     $("#newUser").submit(function (e) {

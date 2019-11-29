@@ -12,7 +12,6 @@ $(document).ready(function () {
     if(!firebase.apps.length) {
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
-    
     }
     var db = firebase.firestore();
 
