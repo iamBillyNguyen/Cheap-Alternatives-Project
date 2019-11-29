@@ -14,13 +14,12 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    width: 100%;
-    height: 2000px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-items: center;
-    justify-content: center;   
+    justify-items: center;  
+    width: 100%;
+    height: 1000px; 
 }
 
 #display td {
@@ -46,13 +45,23 @@
     font-size: 15pt;
 }
 
-#content-wrapper {
-    width: 100%;
-    height: 1000px;
+.review {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.review > p {
+    margin: 5px 20px;
 }
 
 .like {
     max-width: 4%;
+}
+
+.comments {
+    border: 
 }
 
 .content {
