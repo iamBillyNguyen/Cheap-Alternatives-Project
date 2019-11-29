@@ -5,6 +5,8 @@
     <title>Main</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main_stylesheet.css" type="text/css" />
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.4.0/firebase-app.js"></script>
@@ -22,21 +24,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-firestore.js"></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-    <script>
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
-            apiKey: "AIzaSyD_pDCpAP6mtBObEgjgFJWQ7uDmeAZt8ng",
-            authDomain: "washlab-e7c59.firebaseapp.com",
-            databaseURL: "https://washlab-e7c59.firebaseio.com",
-            projectId: "washlab-e7c59",
-            storageBucket: "washlab-e7c59.appspot.com",
-            messagingSenderId: "832183689756",
-            appId: "1:832183689756:web:6a44c4e8616fe77e0ef5d9"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        var db = firebase.firestore();
-    </script>
+    <script src="scripts/firebase-config.js"></script>
 </head>
 
 <body>
@@ -48,6 +36,7 @@
             <h1>Bathrooms Around You</h1>
         </div>
         <div id="content-wrapper">
+<<<<<<< HEAD
             <div id="content">
                 <div class="bathroom">
                     <!-- NAME OF BATHROOM -->
@@ -97,8 +86,76 @@
                 </div>
             </div> -->
         </div>
+=======
+            <table id="display" class="table ">
+                <thead>
+                    <th>
+                        <tr>
+                            <td>
+                                BathRooms
+                            </td>
+                        </tr>
+                    </th>
+                </thead>
+                <tbody class="data">
 
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <input type="text" class="comments" id="firstcomment" placeholder="Write a comment to review this location"
+                pattern="[A-Z][a-z]">
+        </div>
+        <div>
+
+            <input type="text" class="comments" id="secondcomment" placeholder="Write a comment to review this location"
+                pattern="[A-Z][a-z]">
+        </div>
+        <div>
+            <input type="text" class="comments" id="thirdcomment" placeholder="Write a comment to review this location"
+                pattern="[A-Z][a-z]">
+
+
+
+
+        </div>
+
+        <form id="addBathRoom">
+
+            <div class="form-group">
+                <input class="form-control" id="location" placeholder="Location" name="loc" type="text">
+            </div>
+            <div class="form-group">
+                <input class="form-control" id="name" placeholder="Name of bathroom" name="name" type="text">
+            </div>
+
+            <input id="rating" placeholder="rating" name="text">
+            <button class="btn btn-primary" type="submit" id="submit">Submit</button>
+
+
+        </form>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="/scripts/add.js"></script>
         <script src="scripts/mainpage.js"></script>
+        <script>
+            function showbathrooms() {
+                db.collection("Bathroom").get()
+                    .then(function (snap) {
+                        snap.forEach(function (doc) {
+                            var n = doc.data().name;
+                            var loc = doc.data().location;
+                            var rating = doc.data().rating;
+                            var like = doc.data().Like;
+                            var tr = $("<tr>").append('<td>' + n + '</th>').append('<td>' + loc + '</td>').append('<td>' + rating + '</td>').append('<td>' + like + '</td>');
+                            $(".data").append(tr);
+                        });
+                    });
+            }
+            showbathrooms();
+        </script>
+>>>>>>> 7df4fb8c9a78038facd59e7f747d0767f96bf5ef
 </body>
 
 </html>

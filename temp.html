@@ -1,0 +1,8 @@
+db.collection("Bathroom").doc("dt.0001").onSnapshot(function (snap) {
+    console.log("Current data is ... ", snap.data().name);
+    document.getElementById("name1").innerHTML = snap.data().name; //Get name value from document
+    document.getElementById("rating1").innerHTML = snap.data()
+    .rating; //Get rating value from document
+    document.getElementById("location1").innerHTML = snap.data()
+    .location; //Get location value from document
+});

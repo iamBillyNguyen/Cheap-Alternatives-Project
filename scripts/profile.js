@@ -9,22 +9,44 @@ $(document).ready(function () {
         messagingSenderId: "832183689756",
         appId: "1:832183689756:web:6a44c4e8616fe77e0ef5d9"
     };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
+    if(!firebase.apps.length) {
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        }
     var db = firebase.firestore();
 
     $("#newUser").submit(function (e) {
         e.preventDefault();
         console.log("Hello");
-        var email = $("#email").val();
-        var password = $("#password").val();
+        var formEmail = $("#email").val();
+        var formPassword = $("#password").val();
+        var formFirstName = $("#firstName").val();
+        var formPhone = $("#phoneNumber").val();
+        console.log(formEmail);
+        console.log(formFirstName);
 
-        firebase.auth().createUserWithEmailAndPassword(email, password)
-        .then(function(user) {
-            console.log(user);
-        })
-        .catch(function(err) {
-            console.log(err);
-        })
+        firebase.auth().createUserWithEmailAndPassword(formEmail, formPassword)
+            .then(function (user) {
+                firebase.auth().onAuthStateChanged(function (user) {
+                    console.log(user);
+                    console.log(user.uid);
+                    db.collection("users")
+                        .doc(user.uid)
+                        .set({
+                            email: formEmail,
+                            password: formPassword,
+                            firstName: formFirstName,
+                            phoneNumber: formPhone
+                        }, {
+                            merge: true
+                        });
+
+
+                })
+
+            })
+            .catch(function (err) {
+                console.log(err);
+            })
     });
 });

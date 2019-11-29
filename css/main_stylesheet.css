@@ -14,12 +14,22 @@
     background-position: center;
     background-size: cover;
     width: 100%;
+<<<<<<< HEAD
     height: 1000px;
+=======
+
+>>>>>>> 7df4fb8c9a78038facd59e7f747d0767f96bf5ef
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-items: center;
     justify-content: center;    
+}
+
+
+
+#display td {
+    color: white;
 }
 
 .header {
