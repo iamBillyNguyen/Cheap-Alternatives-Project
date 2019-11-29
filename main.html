@@ -36,7 +36,7 @@
             <h1>Bathrooms Around You</h1>
         </div>
         <div id="content-wrapper">
-            <table>
+            <table id="display" class="table table-striped">
                 <thead>
                     <th>
                         <tr>
@@ -96,7 +96,7 @@
                             var loc = doc.data().location;
                             var rating = doc.data().rating;
                             var like = doc.data().Like;
-                            var tr = $("tr").append('<td>' + n + '</th>').append('<td>' + loc + '</td>').append('<td>' + rating + '</td>').append('<td>' + like + '</td>');
+                            var tr = $("<tr>").append('<td>' + n + '</th>').append('<td>' + loc + '</td>').append('<td>' + rating + '</td>').append('<td>' + like + '</td>');
                             $(".data").append(tr);
                         });
                     });

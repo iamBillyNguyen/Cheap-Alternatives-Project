@@ -22,6 +22,14 @@
     justify-content: center;    
 }
 
+#display {
+    
+}
+
+#display td {
+    color: white;
+}
+
 .header {
     display: flex;
     flex-direction: row;
