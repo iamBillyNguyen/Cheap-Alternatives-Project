@@ -1,3 +1,11 @@
+$(document).ready(function(){
+    $("#box5").css("display", "none");
+
+    $("#submit").click(function(){
+        $("#box5").slideDown(500);
+    })
+})
+
 db.collection("Bathroom").doc("dt.0001").onSnapshot(function (snap) {
     console.log("Current data is ... ", snap.data().name);
     document.getElementById("name1").innerHTML = snap.data().name; //Get name value from document

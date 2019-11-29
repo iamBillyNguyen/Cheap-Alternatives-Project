@@ -36,7 +36,7 @@
             <h1>Bathrooms Around You</h1>
         </div>
         <div id="content-wrapper">
-            <div id="content">
+            <div class="content">
                 <div class="bathroom">
                     <!-- NAME OF BATHROOM -->
                     <h3><span id="name1"></span></h3>
@@ -47,8 +47,6 @@
                     <p><span id="likes1"></span></p>
                     <img class="like" id="bathroom1" src="css/image/like.png" />
                 </div>
-            </div>
-            <div id="content">
                 <div class="bathroom">
                     <!-- NAME OF BATHROOM -->
                     <h3><span id="name2"></span></h3>
@@ -59,8 +57,6 @@
                     <p><span id="likes2"></span></p>
                     <img class="like" id="bathroom2" src="css/image/like.png" />
                 </div>
-            </div>
-            <div id="content">
                 <div class="bathroom">
                     <!-- NAME OF BATHROOM -->
                     <h3><span id="name3"></span></h3>
@@ -71,91 +67,95 @@
                     <p><span id="likes3"></span></p>
                     <img class="like" id="bathroom3" src="css/image/like.png" />
                 </div>
-            </div>
-            <!-- <div id="content">
                 <div class="bathroom">
-                    
+
                     <h3><span id="name4"></span></h3>
-                    
+
                     <p><span id="rating4"></span></p>
-                    
+
                     <p><span id="location4"></span></p>
                     <p><span id="likes4"></span></p>
-                    <img class="like" id="bathroom4" src="css/image/like.png"/>
+                    <img class="like" id="bathroom4" src="css/image/like.png" />
                 </div>
-            </div> -->
-        <div>
-            <table id="display" class="table ">
-                <thead>
-                    <th>
-                        <tr>
-                            <td>
-                                Bathrooms
-                            </td>
-                        </tr>
-                    </th>
-                </thead>
-                <tbody class="data">
-    
-                </tbody>
-            </table>
-        </div>
-        <div>
-            <input type="text" class="comments" id="firstcomment" placeholder="Write a comment to review this location"
-                pattern="[A-Z][a-z]">
-        </div>
-        <div>
-    
-            <input type="text" class="comments" id="secondcomment" placeholder="Write a comment to review this location"
-                pattern="[A-Z][a-z]">
-        </div>
-        <div>
-            <input type="text" class="comments" id="thirdcomment" placeholder="Write a comment to review this location"
-                pattern="[A-Z][a-z]">
-    
-    
-    
-    
-        </div>
-    
-        <form id="addBathRoom">
-    
-            <div class="form-group">
-                <input class="form-control" id="location" placeholder="Location" name="loc" type="text">
+                <div class="bathroom" id="box5">
+
+                    <h3><span id="name5"></span></h3>
+
+                    <p><span id="rating5"></span></p>
+
+                    <p><span id="location5"></span></p>
+                    <p><span id="likes5"></span></p>
+                    <img class="like" id="bathroom5" src="css/image/like.png" />
+                </div>
             </div>
-            <div class="form-group">
-                <input class="form-control" id="name" placeholder="Name of bathroom" name="name" type="text">
+            <!-- <div>
+                    <table id="display" class="table ">
+                        <thead>
+                            <th>
+                                <tr>
+                                    <td>
+                                        Bathrooms
+                                    </td>
+                                </tr>
+                            </th>
+                        </thead>
+                        <tbody class="data">
+    
+                        </tbody>
+                    </table>
+                </div> -->
+            <!-- <form>
+                <div>
+                    <input type="text" class="comments" id="firstcomment"
+                        placeholder="Write a comment to review this location" pattern="[A-Z][a-z]">
+                </div>
+                <div>
+
+                    <input type="text" class="comments" id="secondcomment"
+                        placeholder="Write a comment to review this location" pattern="[A-Z][a-z]">
+                </div>
+                <div>
+                    <input type="text" class="comments" id="thirdcomment"
+                        placeholder="Write a comment to review this location" pattern="[A-Z][a-z]">
+                </div>
+            </form> -->
+
+            <form id="addBathRoom">
+                <div class="form-group">
+                    <input class="form-control" id="location" placeholder="Location" name="loc" type="text">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" id="name" placeholder="Name of bathroom" name="name" type="text">
+                </div>
+                <div>
+                <input id="rating" placeholder="Rating" name="text">
             </div>
-    
-            <input id="rating" placeholder="rating" name="text">
-            <button class="btn btn-primary" type="submit" id="submit">Submit</button>
-    
-    
-        </form>
+                <button class="btn btn-primary" type="submit" id="submit">Submit</button>
+            </form>
         </div>
-        
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="/scripts/add.js"></script>
-    <script src="scripts/mainpage.js"></script>
-    <script>
-        function showbathrooms() {
-            db.collection("Bathroom").get()
-                .then(function (snap) {
-                    snap.forEach(function (doc) {
-                        var n = doc.data().name;
-                        var loc = doc.data().location;
-                        var rating = doc.data().rating;
-                        var like = doc.data().Like;
-                        var tr = $("<tr>").append('<td>' + n + '</th>').append('<td>' + loc + '</td>')
-                            .append('<td>' + rating + '</td>').append('<td>' + like + '</td>');
-                        $(".data").append(tr);
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="/scripts/add.js"></script>
+        <script src="scripts/mainpage.js"></script>
+        <script>
+            function showbathrooms() {
+                db.collection("Bathroom").get()
+                    .then(function (snap) {
+                        snap.forEach(function (doc) {
+                            var n = doc.data().name;
+                            var loc = doc.data().location;
+                            var rating = doc.data().rating;
+                            var like = doc.data().Like;
+                            var tr = $("<tr>").append('<td>' + n + '</th>').append('<td>' + loc + '</td>')
+                                .append('<td>' + rating + '</td>').append('<td>' + like + '</td>');
+                            $(".data").append(tr);
+                        });
                     });
-                });
-        }
-        showbathrooms();
-    </script>
+            }
+            showbathrooms();
+        </script>
 </body>
 
 </html>
