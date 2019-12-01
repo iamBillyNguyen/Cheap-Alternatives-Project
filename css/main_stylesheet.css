@@ -53,15 +53,32 @@
 }
 
 .review > p {
-    margin: 5px 20px;
+    margin: 6px 8px;
 }
 
 .like {
     max-width: 4%;
 }
 
+.dislike {
+    padding-top: 2px;
+    max-width: 4%;
+}
+
 .comments {
-    border: 
+    padding-left: 10px;
+    border-radius: 10px;
+    height: 30px;
+}
+
+.cmt-btn {
+    border: none;
+    background-color: lightgrey;
+    padding: 2px 5px;
+}
+
+.comment-box {
+    margin-top: 10px;
 }
 
 .content {
@@ -70,14 +87,20 @@
     background-color: rgba(0, 0 , 0 , 0.5);
     padding: 10px 10px;
     width: 65%;
-    height: 550px;
+    height: 850px;
     /* justify-items: center;
     justify-content: center; */
     /* align-items: center; */
     /* overflow: scroll;  */
 }
 
-
+.smt-btn {
+    margin-left: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #72a5cc;
+    padding: 5px 5px;
+}
 
 .bathroom {
     align-items: center;
@@ -85,6 +108,7 @@
     justify-content: center;
     text-align: center;
     width: 70%;
+    height: 150px;
     padding: 10px 10px;
     background-color: white;
     margin-left: 110px;

@@ -1,9 +1,27 @@
 $(document).ready(function(){
     $("#box5").css("display", "none");
+    $("#comment1").css("display", "none");
+    $("#submit1").css("display", "none");
+    $("#comment2").css("display", "none");
+    $("#submit2").css("display", "none");
+    $("#comment3").css("display", "none");
+    $("#submit3").css("display", "none");
+    $("#comment4").css("display", "none");
+    $("#submit4").css("display", "none");
 
     $("#submit").click(function(){
         $("#box5").slideDown(500);
-    })
+    });
+
+    $("#cmt1").click(function(){
+        $("#comment1").toggle("clip");
+        $("#submit1").toggle("clip");
+    });
+
+    $("#cmt2").click(function(){
+        $("#comment2").toggle("clip");
+        $("#submit2").toggle("clip");
+    });
 })
 
 db.collection("Bathroom").doc("b1").onSnapshot(function (snap) {
@@ -17,9 +35,11 @@ db.collection("Bathroom").doc("b1").onSnapshot(function (snap) {
 
     document.getElementById("likes1").innerHTML = snap.data()
         .Like; //Get like
+    document.getElementById("dislikes1").innerHTML = snap.data()
+        .Dislike; //Get dislike
     console.log("Current likes: ", snap.data().Like);
+    console.log("Current dislikes: ", snap.data().Dislike);
 
-    setAddListener("1");
 });
 
 db.collection("Bathroom").doc("b2").onSnapshot(function (snap) {
@@ -32,9 +52,10 @@ db.collection("Bathroom").doc("b2").onSnapshot(function (snap) {
 
     document.getElementById("likes2").innerHTML = snap.data()
         .Like; //Get like
+    document.getElementById("dislikes1").innerHTML = snap.data()
+        .Dislike; //Get dislike    
     console.log("Current likes: ", snap.data().Like);
 
-    setAddListener("2");
 });
 
 db.collection("Bathroom").doc("b3").onSnapshot(function (snap) {
@@ -47,9 +68,10 @@ db.collection("Bathroom").doc("b3").onSnapshot(function (snap) {
 
     document.getElementById("likes3").innerHTML = snap.data()
         .Like; //Get like
+    document.getElementById("dislikes1").innerHTML = snap.data()
+        .Dislike; //Get dislike
     console.log("Current likes: ", snap.data().Like);
 
-    setAddListener("3");
 });
 
 db.collection("Bathroom").doc("b4").onSnapshot(function (snap) {
@@ -62,9 +84,9 @@ db.collection("Bathroom").doc("b4").onSnapshot(function (snap) {
 
     document.getElementById("likes4").innerHTML = snap.data()
         .Like; //Get like
+    document.getElementById("dislikes1").innerHTML = snap.data()
+        .Dislike; //Get dislike
     console.log("Current likes: ", snap.data().Like);
-
-    setAddListener("4");
 });
 
 db.collection("Bathroom").doc("b5").onSnapshot(function (snap) {
@@ -78,10 +100,19 @@ db.collection("Bathroom").doc("b5").onSnapshot(function (snap) {
 
     document.getElementById("likes5").innerHTML = snap.data()
         .Like; //Get like
+    document.getElementById("dislikes1").innerHTML = snap.data()
+        .Dislike; //Get dislike
     console.log("Current likes: ", snap.data().Like);
-
-    setAddListener("5");
 });
+
+setAddListener("1");
+setAddListener2("1");
+setAddListener("2");
+setAddListener2("2");
+setAddListener("3");
+setAddListener2("3");
+setAddListener("4");
+setAddListener2("4");
 
 
 function showLikes(n) {
@@ -89,20 +120,31 @@ function showLikes(n) {
         db.collection("Bathroom")
         .doc("b"+n)
             .onSnapshot(function (d) {
-                console.log("Current data: ", d.data().Like);
+                // console.log("Current data: ", d.data().Like);
                 document.getElementById(("likes"+n).innerHTML = d.data().Like);
+            });
+    })
+}
+
+function showDislikes(n) {
+    firebase.auth().onAuthStateChanged(function (user) {
+        db.collection("Bathroom")
+        .doc("b" + n)
+            .onSnapshot(function (d) {
+                // console.log("Current data: ", d.data().Dislike);
+                document.getElementById(("dislikes" + n).innerHTML = d.data().Dislike);
             });
     })
 }
 
 
 function setAddListener(n) {
-    document.getElementById("bathroom" + n).addEventListener("click", function (e) {
+    document.getElementById("like-btn" + n).addEventListener("click", function (e) {
 
         var like = db.collection("Bathroom").doc("b" + n);
 
         var increment = firebase.firestore.FieldValue.increment(1);
-        console.log("showing" + increment);
+        console.log("Like:" + increment);
 
         e.preventDefault();
 
@@ -111,6 +153,28 @@ function setAddListener(n) {
             })
             .then(function () {
                 showLikes(n);
+            })
+            .catch(function (error) {
+                console.error("Error writing document: ", error);
+            });
+    });
+}
+
+function setAddListener2(n) {
+    document.getElementById("dislike-btn" + n).addEventListener("click", function (e) {
+
+        var like = db.collection("Bathroom").doc("b" + n);
+
+        var increment = firebase.firestore.FieldValue.increment(1);
+        console.log("Dislike:" + increment);
+
+        e.preventDefault();
+
+        like.update({
+                Dislike: increment
+            })
+            .then(function () {
+                showDislikes(n);
             })
             .catch(function (error) {
                 console.error("Error writing document: ", error);
