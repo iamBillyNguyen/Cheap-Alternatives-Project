@@ -38,11 +38,22 @@
 .header > h1 {
     text-align: center;
     margin-left: 420px;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .header > p {
     font-size: 15pt;
+}
+
+#add-bathroom {
+    font-size: 12pt;
+    border: none;
+    height: 45px;
+    border-radius: 15px;
+    padding: 10px 10px;
+    margin-top: 25px;
+    margin-left: 350px;
+    width: 10%;
 }
 
 .review {
