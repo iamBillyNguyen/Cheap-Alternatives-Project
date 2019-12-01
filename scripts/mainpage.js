@@ -39,6 +39,10 @@ $(document).ready(function(){
         $("#comment5").toggle("clip");
         $("#submit5").toggle("clip");
     });
+
+    $("#add-bathroom").click(function(){
+        $(".add-box").toggle("clip");
+    });
 })
 
 db.collection("Bathroom").doc("b1").onSnapshot(function (snap) {

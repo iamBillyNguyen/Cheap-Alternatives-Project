@@ -39,10 +39,41 @@
     text-align: center;
     margin-left: 420px;
     margin-top: 20px;
+    z-index: 1;
 }
 
 .header > p {
     font-size: 15pt;
+}
+
+.add-box {
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height: 30px;
+    padding: 20px 320px;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.add-box > .input {
+    margin-right: 20px;
+    height: 30px;
+    padding-left: 10px;
+    border-radius: 10px;
+    border: 1px solid lightgrey;
+}
+
+#submit {
+    font-size: 12pt;
+    width: 8%;
+    height: 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: #72a5cc;
 }
 
 #add-bathroom {
@@ -99,6 +130,7 @@
     padding: 10px 10px;
     width: 65%;
     height: 850px;
+    z-index: 2;
     /* justify-items: center;
     justify-content: center; */
     /* align-items: center; */
