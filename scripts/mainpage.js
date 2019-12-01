@@ -8,6 +8,8 @@ $(document).ready(function(){
     $("#submit3").css("display", "none");
     $("#comment4").css("display", "none");
     $("#submit4").css("display", "none");
+    $("#comment5").css("display", "none");
+    $("#submit5").css("display", "none");
 
     $("#submit").click(function(){
         $("#box5").slideDown(500);
@@ -21,6 +23,21 @@ $(document).ready(function(){
     $("#cmt2").click(function(){
         $("#comment2").toggle("clip");
         $("#submit2").toggle("clip");
+    });
+
+    $("#cmt3").click(function(){
+        $("#comment3").toggle("clip");
+        $("#submit3").toggle("clip");
+    });
+
+    $("#cmt4").click(function(){
+        $("#comment4").toggle("clip");
+        $("#submit4").toggle("clip");
+    });
+
+    $("#cmt5").click(function(){
+        $("#comment5").toggle("clip");
+        $("#submit5").toggle("clip");
     });
 })
 
