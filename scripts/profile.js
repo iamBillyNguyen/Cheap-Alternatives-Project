@@ -40,7 +40,7 @@ $(document).ready(function () {
                         }, {
                             merge: true
                         })
-                        window.location ="../landing.html";
+                        window.location ="../main.html";
 
 
                 })

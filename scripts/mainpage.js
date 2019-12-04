@@ -1,4 +1,23 @@
-$(document).ready(function(){
+$(document).ready(function () {
+
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+            var user = firebase.auth().currentUser.uid;
+            console.log(user);
+            db.collection("users").doc(user).get()
+            .then(function (doc) {
+                console.log(doc.data());
+                var name = doc.data().firstName;
+                $("#username").text("Welcome " + name);
+            }).catch(function (err) {
+                console.log(err);
+            })
+
+        } else {
+            // No user is signed in.
+        }
+    });
+
     $("#box5").css("display", "none");
     $("#comment1").css("display", "none");
     $("#submit1").css("display", "none");
@@ -11,39 +30,60 @@ $(document).ready(function(){
     $("#comment5").css("display", "none");
     $("#submit5").css("display", "none");
 
-    $("#submit").click(function(){
+    $("#submit").click(function () {
         $("#box5").slideDown(500);
     });
 
-    $("#cmt1").click(function(){
+    $("#cmt1").click(function () {
         $("#comment1").toggle("clip");
         $("#submit1").toggle("clip");
     });
 
-    $("#cmt2").click(function(){
+    $("#cmt2").click(function () {
         $("#comment2").toggle("clip");
         $("#submit2").toggle("clip");
     });
 
-    $("#cmt3").click(function(){
+    $("#cmt3").click(function () {
         $("#comment3").toggle("clip");
         $("#submit3").toggle("clip");
     });
 
-    $("#cmt4").click(function(){
+    $("#cmt4").click(function () {
         $("#comment4").toggle("clip");
         $("#submit4").toggle("clip");
     });
 
-    $("#cmt5").click(function(){
+    $("#cmt5").click(function () {
         $("#comment5").toggle("clip");
         $("#submit5").toggle("clip");
     });
 
-    $("#add-bathroom").click(function(){
+    $("#add-bathroom").click(function () {
         $(".add-box").toggle("clip");
     });
+
+
+    $("#login").submit(function (e) {
+        e.preventDefault();
+        var email = $("#email").val();
+        var password = $("#password").val();
+
+        firebase.auth().signInWithEmailAndPassword(email, password)
+            .then(function (error) {
+                var user = firebase.auth().currentUser;
+
+                console.log(user);
+                window.location = "../main.html";
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+
+    })
 })
+
+
 
 db.collection("Bathroom").doc("b1").onSnapshot(function (snap) {
     console.log("Current data is ... ", snap.data().name);
@@ -139,10 +179,10 @@ setAddListener2("4");
 function showLikes(n) {
     firebase.auth().onAuthStateChanged(function (user) {
         db.collection("Bathroom")
-        .doc("b"+n)
+            .doc("b" + n)
             .onSnapshot(function (d) {
                 // console.log("Current data: ", d.data().Like);
-                document.getElementById(("likes"+n).innerHTML = d.data().Like);
+                document.getElementById(("likes" + n).innerHTML = d.data().Like);
             });
     })
 }
@@ -150,7 +190,7 @@ function showLikes(n) {
 function showDislikes(n) {
     firebase.auth().onAuthStateChanged(function (user) {
         db.collection("Bathroom")
-        .doc("b" + n)
+            .doc("b" + n)
             .onSnapshot(function (d) {
                 // console.log("Current data: ", d.data().Dislike);
                 document.getElementById(("dislikes" + n).innerHTML = d.data().Dislike);
