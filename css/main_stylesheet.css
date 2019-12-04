@@ -160,17 +160,24 @@
 
 /* Iphones 5/SE */
 @media screen and (max-width: 320px) {
-    * {font-size: 1.0rem;}
+    * {font-size: 1.1rem;}
 
     .header {
-        width: 93.8%;
+        width: 100%;
         height: 120px;
+    }
+
+    #add-bathroom {
+        margin-left: -85%;
+        transform: translateY(120%);
+        width: 40%;
     }
     
     .header > h1 {
-        font-size: 2.0rem;
+        font-size: 1.5rem;
         margin-left: 0px;
-        transform: translateX(-50px);
+        margin-top: 35px;
+        transform: translateX(-65px);
     }
 
     #content {
@@ -181,7 +188,7 @@
     .bathroom {
         transform: translateX(-125px);
         width: 110%;
-        height: 50px;
+        height: 200px;
         margin-bottom: 15px;
     }
 }
