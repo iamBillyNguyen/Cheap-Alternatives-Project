@@ -97,7 +97,7 @@ $(document).ready(function(){
         } else {
             // No user is signed in.
         }
-})
+    })
 });
 
 db.collection("Bathroom").doc("b1").onSnapshot(function (snap) {

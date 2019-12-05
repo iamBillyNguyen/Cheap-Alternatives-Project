@@ -46,6 +46,11 @@
     font-size: 15pt;
 }
 
+#logout {
+    font-size: 10pt;
+    /* margin-left: -20px; */
+}
+
 .add-box {
     z-index: 2;
     display: flex;
