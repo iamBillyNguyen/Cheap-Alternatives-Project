@@ -31,7 +31,7 @@ $(document).ready(function () {
                     console.log(user);
                     console.log(user.uid);
                     db.collection("users")
-                        .doc(user.uid)
+                        .doc(user)
                         .set({
                             email: formEmail,
                             password: formPassword,
