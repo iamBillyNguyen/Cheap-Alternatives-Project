@@ -73,9 +73,10 @@ db.collection("Bathroom").doc("b2").onSnapshot(function (snap) {
 
     document.getElementById("likes2").innerHTML = snap.data()
         .Like; //Get like
-    document.getElementById("dislikes1").innerHTML = snap.data()
+    document.getElementById("dislikes2").innerHTML = snap.data()
         .Dislike; //Get dislike    
     console.log("Current likes: ", snap.data().Like);
+    console.log("Current dislikes: ", snap.data().Dislike);
 
 });
 
@@ -89,9 +90,10 @@ db.collection("Bathroom").doc("b3").onSnapshot(function (snap) {
 
     document.getElementById("likes3").innerHTML = snap.data()
         .Like; //Get like
-    document.getElementById("dislikes1").innerHTML = snap.data()
+    document.getElementById("dislikes3").innerHTML = snap.data()
         .Dislike; //Get dislike
     console.log("Current likes: ", snap.data().Like);
+    console.log("Current dislikes: ", snap.data().Dislike);
 
 });
 
@@ -105,26 +107,26 @@ db.collection("Bathroom").doc("b4").onSnapshot(function (snap) {
 
     document.getElementById("likes4").innerHTML = snap.data()
         .Like; //Get like
-    document.getElementById("dislikes1").innerHTML = snap.data()
+    document.getElementById("dislikes4").innerHTML = snap.data()
         .Dislike; //Get dislike
     console.log("Current likes: ", snap.data().Like);
 });
 
-db.collection("Bathroom").doc("b5").onSnapshot(function (snap) {
-    console.log("Current data is ... ", snap.data().name);
-    document.getElementById("name5").innerHTML = snap.data()
-        .name; //Get name value from document
-    document.getElementById("rating5").innerHTML = snap.data()
-        .rating; //Get rating value from document
-    document.getElementById("location5").innerHTML = snap.data()
-        .location; //Get location value from document
+// db.collection("Bathroom").doc("b5").onSnapshot(function (snap) {
+//     console.log("Current data is ... ", snap.data().name);
+//     document.getElementById("name5").innerHTML = snap.data()
+//         .name; //Get name value from document
+//     document.getElementById("rating5").innerHTML = snap.data()
+//         .rating; //Get rating value from document
+//     document.getElementById("location5").innerHTML = snap.data()
+//         .location; //Get location value from document
 
-    document.getElementById("likes5").innerHTML = snap.data()
-        .Like; //Get like
-    document.getElementById("dislikes1").innerHTML = snap.data()
-        .Dislike; //Get dislike
-    console.log("Current likes: ", snap.data().Like);
-});
+//     document.getElementById("likes5").innerHTML = snap.data()
+//         .Like; //Get like
+//     document.getElementById("dislikes5").innerHTML = snap.data()
+//         .Dislike; //Get dislike
+//     console.log("Current likes: ", snap.data().Like);
+// });
 
 setAddListener("1");
 setAddListener2("1");
