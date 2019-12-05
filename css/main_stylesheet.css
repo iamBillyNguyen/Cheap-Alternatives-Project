@@ -37,7 +37,7 @@
 
 .header > h1 {
     text-align: center;
-    margin-left: 420px;
+    margin-left: 370px;
     margin-top: 20px;
     z-index: 1;
 }
@@ -46,9 +46,28 @@
     font-size: 15pt;
 }
 
-#logout {
-    font-size: 10pt;
-    /* margin-left: -20px; */
+.b {
+    display: flex;
+    flex-direction: column;
+    margin-left: 280px;
+    width: 20%;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+#add-bathroom {
+    font-size: 12pt;
+    border: none;
+    height: 45px;
+    border-radius: 15px;
+    padding: 10px 10px;
+    width: 60%;
+    text-align: center;
+}
+
+.b > a {
+    margin-bottom: 10px;
 }
 
 .add-box {
@@ -79,17 +98,6 @@
     border: none;
     border-radius: 10px;
     background-color: #72a5cc;
-}
-
-#add-bathroom {
-    font-size: 12pt;
-    border: none;
-    height: 45px;
-    border-radius: 15px;
-    padding: 10px 10px;
-    margin-top: 25px;
-    margin-left: 350px;
-    width: 10%;
 }
 
 .review {
