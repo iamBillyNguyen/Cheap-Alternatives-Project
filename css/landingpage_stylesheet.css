@@ -46,31 +46,17 @@ h1 {
     padding-top: 20px;
 }
 
-.search-btn {
-    height: 80px;
-    width: 450px;
-    font-size: 24pt;
-    background: #72a5cc;
-    border: none;
-    color: solid black;
-    border-radius: 15px;
-    margin: 20px 10px;
-    padding: 0px 10px;
-}
-
-
 .buttons {
-    grid-column: 3 / span 1;
-    grid-row: 1 / span 1;
-    width: 100%;
+    width: 50%;
     display: flex;
     flex-direction: row;
     margin-top: 5px;
 }
 
 .login {
-    height: 50px;
-    width: 150px;
+    font-size: 21pt;
+    height: 60px;
+    width: 190px;
     background: #bfbfbf;
     border: none;
     color: #000;
@@ -84,9 +70,9 @@ ul {
     align-content: center;
 }
 
-.register {
-    height: 50px;
-    width: 150px;
+.register {font-size: 21pt;
+    height: 60px;
+    width: 190px;
     background: #72a5cc;
     border: none;
     color: #000;
