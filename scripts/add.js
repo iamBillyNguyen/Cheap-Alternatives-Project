@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    var i = 0;
     // Your web app's Firebase configuration
     var firebaseConfig = {
         apiKey: "AIzaSyD_pDCpAP6mtBObEgjgFJWQ7uDmeAZt8ng",
@@ -33,10 +34,44 @@ $(document).ready(function () {
         };
 
         firebase.auth().onAuthStateChanged(function (user) {
-                
+                i++;
                 db.collection("Bathroom").doc("b" + i)
                     .add(bathroom);
+            }).then(function(currentDoc) {
+                db.collection("Bathroom").doc(currentDoc).get().then(function(snap) {
+                    snap.forEach(review => {
+                    var n = review.data().text;
+                    var rating = review.data().overallRating;
+                    var temph4 = document.createElement("h4");
+                    var tempDiv = document.createElement("div");
+                    var tempStar = document.createElement("div");
+                    while (rating > 0) {
+                        if (rating >= 1) {
+                            var tempSpan = document.createElement("span");
+                            tempSpan.className = "fa fa-star checked";
+                            tempStar.appendChild(tempSpan);
+                            rating -= 1;
+                        } else if (rating > 0.4) {
+                            var tempSpan = document.createElement("span");
+                            tempSpan.className = "fa fa-star-half-o checked";
+                            tempStar.appendChild(tempSpan);
+                            rating -= 0.5;
+                        }
+                    }
+                    tempDiv.innerHTML = n;
+    
+                    temph4.innerHTML = review.data().author;
+                    document.getElementById("review_container").appendChild(temph4);
+                        document.getElementById("review_container").appendChild(tempStar);
+                    document.getElementById("review_container").appendChild(tempDiv);
             })
+
+
+
+            
+
+            })
+        })
     });
 
 

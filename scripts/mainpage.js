@@ -63,23 +63,14 @@ $(document).ready(function(){
         $(".add-box").toggle("clip");
     });
 
-    $("#login").submit(function (e) {
-        e.preventDefault();
-        var email = $("#email").val();
-        var password = $("#password").val();
+    
 
-        firebase.auth().signInWithEmailAndPassword(email, password)
-            .then(function (error) {
-                var user = firebase.auth().currentUser;
+    
+    });
 
-                console.log(user);
-                window.location = "../main.html";
-            })
-            .catch(function (error) {
-                console.log(error);
-            })
 
-    })
+
+   
 
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
@@ -97,7 +88,7 @@ $(document).ready(function(){
         } else {
             // No user is signed in.
         }
-})
+
 });
 
 db.collection("Bathroom").doc("b1").onSnapshot(function (snap) {
