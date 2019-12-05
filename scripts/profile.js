@@ -31,7 +31,7 @@ $(document).ready(function () {
                     console.log(user);
                     console.log(user.uid);
                     db.collection("users")
-                        .doc(user)
+                        .doc(user.uid)
                         .set({
                             email: formEmail,
                             password: formPassword,
@@ -39,10 +39,8 @@ $(document).ready(function () {
                             phoneNumber: formPhone
                         }, {
                             merge: true
-                        })
-                        // window.location ="../landing.html";
-
-
+                        });
+                    window.location = "../main.html";
                 })
 
             })
