@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $("#newUser").submit(function (e) {
+    $("#register").submit(function (e) {
         e.preventDefault();
         console.log("Hello");
         var formEmail = $("#email").val();
