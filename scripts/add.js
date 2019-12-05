@@ -34,7 +34,7 @@ $(document).ready(function () {
 
         firebase.auth().onAuthStateChanged(function (user) {
                 
-                db.collection("Bathroom").doc("" + i)
+                db.collection("Bathroom").doc("b" + i)
                     .add(bathroom);
             })
     });
