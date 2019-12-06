@@ -73,20 +73,25 @@
     color: white;
 }
 
+form {
+    width: 150%;
+}
+
 .add-box {
     z-index: 2;
     display: flex;
     flex-direction: row;
-    width: 50%;
+    width: 80%;
     height: 30px;
-    padding: 20px 320px;
-    display: none;
+    padding: 20px 0px;
+    padding-left: 290px;
+    /* display: none; */
     justify-items: center;
     justify-content: center;
     align-items: center;
 }
 
-.add-box > .input {
+form > .input {
     margin-right: 20px;
     height: 30px;
     padding-left: 10px;
@@ -96,7 +101,7 @@
 
 #submit {
     font-size: 12pt;
-    width: 15%;
+    width: 10%;
     height: 30px;
     border: none;
     border-radius: 10px;
