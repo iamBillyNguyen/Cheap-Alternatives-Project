@@ -182,6 +182,10 @@ setAddListener2("4");
 setAddListener("0");
 setAddListener2("0");
 
+//setAddListener3("1");
+//setAddListener3("2");
+//setAddListener3("3");
+//setAddListener3("4");
 
 
 function showLikes(n) {
@@ -206,7 +210,31 @@ function showDislikes(n) {
     })
 }
 
+//let comment = document.createElement("div");
+//(comment + n).appendChild(comment);
+//function showComments(n) {
+  //  firebase.auth().onAuthStateChanged(function (user) {
+    //    db.collection("Bathroom")
+      //  .doc("b" + n)
+        //    .onSnapshot(function (d) {
+          //      document.getElementById(("rating" + n).innerHTML = d.data().rating);
+            //});
+    //})
+//}
 
+//function setAddListener3(n) {
+  //  document.getElementById("smt-btn" + n).addEventListener("click", function (e) {
+
+    //    var like = db.collection("Bathroom").doc("b" + n);
+
+      //  e.preventDefault();
+
+        //rating.update({
+       //         showComments(n);
+        //});
+
+//    });
+//};
 function setAddListener(n) {
     document.getElementById("like-btn" + n).addEventListener("click", function (e) {
 
