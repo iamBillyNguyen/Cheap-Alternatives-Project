@@ -5,9 +5,6 @@
 
 <h2><u>Features</u></h2>
 
-<h3>Search</h3>
-<p>You can search for a bathroom</p>
-
 <h3>Add a bathroom</h3>
 <p>A user can add a bathroom</p>
 
@@ -21,3 +18,8 @@
 
 <h3>Pin a bathroom on a map<h3>
 <p>Add a bathroom on a map</p>
+  
+ <h3>Search</h3>
+<p>You can search for a bathroom</p>
+
+
