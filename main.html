@@ -39,12 +39,13 @@
                 <button type="button" id="add-bathroom">Add Bathroom</button>
             </div>
         </header>
+        <!-- FORM BOX TO UPLOAD A BATHROOM-->
         <div class="add-box">
             <form>
                 <input class="form-control input" id="location" placeholder="Location" name="loc" type="text">
                 <input class="form-control input" id="name" placeholder="Name of bathroom" name="name" type="text">
                 <input class="input" placeholder="Comment" id="rating" name="text">
-                <input type="submit" id="submit" value="Upload"/>
+                <input type="submit" id="submit" value="Upload" />
             </form>
         </div>
         <div id="content-wrapper">
@@ -57,18 +58,22 @@
                     <!-- LOCATION OF BATHROOM-->
                     <p><span id="location1"></span></p>
                     <div class="review">
+                        <!--Click button for comment box to appear-->
                         <button class="cmt-btn" id="cmt1">Comment</button>
+                        <!--DISLIKE BOX-->
                         <div class="like-box">
                             <p>Like:</p>
                             <p><span id="likes1"></span></p>
                             <img class="like" id="like-btn1" src="css/image/like.png" />
                         </div>
+                        <!--DISLIKE BOX-->
                         <div class="dislike-box">
                             <p>Dislike:</p>
                             <p><span id="dislikes1"></span></p>
                             <img class="dislike" id="dislike-btn1" src="css/image/dislike.png" />
                         </div>
                     </div>
+                    <!--COMMENT BOX-->
                     <div class="comment-box">
                         <input type="text" class="comments" id="comment1" placeholder="Write a comment ...">
                         <button class="smt-btn" id="submit1">Upload</button>
@@ -125,11 +130,11 @@
                     </div>
                 </div>
                 <div class="bathroom">
-
+                    <!--NAME OF BATHROOM-->
                     <h3><span id="name4"></span></h3>
-
+                    <!--RATING OF BATHROOM-->
                     <p><span id="rating4"></span></p>
-
+                    <!--LOCATION OF BATHROOM-->
                     <p><span id="location4"></span></p>
                     <div class="review">
                         <button class="cmt-btn" id="cmt4">Comment</button>
@@ -149,13 +154,14 @@
                         <button class="smt-btn" id="submit4">Upload</button>
                     </div>
                 </div>
+
                 <!--EMPTY DIV TO DISPLAY USER'S INPUT-->
                 <div class="bathroom" id="box5">
-
+                    <!--NAME OF BATHROOM-->
                     <h3><span id="name5"></span></h3>
-
+                    <!--RATING OF BATHROOM-->
                     <p><span id="rating5"></span></p>
-
+                    <!--LOCATION OF BATHROOM-->
                     <p><span id="location5"></span></p>
                     <div class="review">
                         <button class="cmt-btn" id="cmt5">Comment</button>
@@ -176,25 +182,7 @@
                     </div>
                 </div>
             </div>
-            <!-- <div>
-                    <table id="display" class="table ">
-                        <thead>
-                            <th>
-                                <tr>
-                                    <td>
-                                        Bathrooms
-                                    </td>
-                                </tr>
-                            </th>
-                        </thead>
-                        <tbody class="data">
-    
-                        </tbody>
-                    </table>
-                </div> -->
         </div>
-
-
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="/scripts/add.js"></script>
