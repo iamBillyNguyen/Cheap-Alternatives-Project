@@ -1,6 +1,6 @@
 var i = 0;
 $(document).ready(function () {
-
+    const increment = firebase.firestore.FieldValue.increment(1);
     // Your web app's Firebase configuration
     var firebaseConfig = {
         apiKey: "AIzaSyD_pDCpAP6mtBObEgjgFJWQ7uDmeAZt8ng",
@@ -35,17 +35,42 @@ $(document).ready(function () {
         };
 
         firebase.auth().onAuthStateChanged(function (bathroom) {
-            
-            db.collection("Bathroom").doc("b" + i).set({
-                Like: 1,
+            var id = "b" + increment;
+            db.collection("Bathroom").doc("b" + increment).set({
+                Like: 0,
+                Dislike: 0,
                 name: name,
                 location: location,
                 rating: rating
-            },{merge: true,})
-            $(".add-box").toggle("clip");
-            i++;
+            }, {
+                merge: true,
+            }).then(function(docRef) {
+                $(".add-box").toggle("clip");
+
+                console.log(docRef);
+                db.collection("Bathroom").doc(id).get()
+                    .then(function (doc) {
+    
+                        var n = doc.data().name;
+                        var loc = doc.data().location;
+                        var rating = doc.data().rating;
+                        var like = doc.data().Like;
+                        console.log(n);
+                        $("#name5").text(n);
+                        $("#rating5").text(rating);
+                        $("#location5").text(loc);
+                        $("#likes5").text(like);
+                        $("#dislikes5").text(like);
+    
+                    }).catch(function(err) {
+                        console.log(err);
+                    }) 
+            }).catch(function (err) {
+                console.log(err);
+            });
+           
         })
-        
+
 
 
     })
