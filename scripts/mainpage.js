@@ -169,9 +169,6 @@ db.collection("Bathroom").doc("b0").onSnapshot(function (snap) {
     console.log("Current likes: ", snap.data().Like);
 });
 
-
-setAddListener("0");
-setAddListener2("0");
 setAddListener("1");
 setAddListener2("1");
 setAddListener("2");
@@ -279,3 +276,6 @@ function setAddListener2(n) {
     });
 }
 });
+
+setAddListener("0");
+setAddListener2("0");
