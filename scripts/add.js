@@ -1,6 +1,5 @@
 var i = 0;
 $(document).ready(function () {
-    const increment = firebase.firestore.FieldValue.increment(1);
     // Your web app's Firebase configuration
     var firebaseConfig = {
         apiKey: "AIzaSyD_pDCpAP6mtBObEgjgFJWQ7uDmeAZt8ng",
@@ -20,10 +19,9 @@ $(document).ready(function () {
     $(".add-box").submit(function (e) {
         e.preventDefault();
         console.log("Hello");
-        var location = $("#input[name=q12_3]:checked").val();
-        
-        var name = $("#name").val();
+        var location = $("#location").val();
         var rating = $("#rating").val();
+        var name = $("#name").val();
         console.log(location);
         console.log(name);
         console.log(rating);
@@ -36,40 +34,57 @@ $(document).ready(function () {
         };
 
         firebase.auth().onAuthStateChanged(function (bathroom) {
-            var id = "b" + increment._operand;
-            console.log(increment);
-            console.log(id);
-            db.collection("Bathroom").doc("b5").set({
-                Like: 0,
-                Dislike: 0,
-                name: name,
-                location: location,
-                rating: rating
-            }, {
-                merge: true,
-            }).then(function(docRef) {
-                $(".add-box").toggle("clip");
-                db.collection("Bathroom").doc("b5").get()
+            var increment = firebase.firestore.FieldValue.increment(1);
+
+            db.collection("increment").doc("counter").update({
+                val: increment
+            }).then(function () {
+                db.collection("increment").doc("counter").get()
                     .then(function (doc) {
-    
-                        var n = doc.data().name;
-                        var loc = doc.data().location;
-                        var rating = doc.data().rating;
-                        var like = doc.data().Like;
-                        console.log(n);
-                        $("#name5").text(n);
-                        $("#rating5").text(rating);
-                        $("#location5").text(loc);
-                        $("#likes5").text(like);
-                        $("#dislikes5").text(like);
-    
-                    }).catch(function(err) {
+                        console.log(doc.data().val)
+                        i = doc.data().val
+                    }).catch(function (err) {
                         console.log(err);
-                    }) 
-            }).catch(function (err) {
-                console.log(err);
-            });
-           
+                    })
+            }).then(function () {
+                console.log("b" +i);
+
+                db.collection("Bathroom").doc("b" + i).set({
+                    Like: 0,
+                    Dislike: 0,
+                    name: name,
+                    location: location,
+                    rating: rating
+                }, {
+                    merge: true,
+                }).then(function (docRef) {
+                    $(".add-box").toggle("clip");
+                    db.collection("Bathroom").doc("b" + i).get()
+                        .then(function (doc) {
+
+                            var n = doc.data().name;
+                            var loc = doc.data().location;
+                            var rating = doc.data().rating;
+                            var like = doc.data().Like;
+                            console.log(n);
+                            $("#name5").text(n);
+                            $("#rating5").text(rating);
+                            $("#location5").text(loc);
+                            $("#likes5").text(like);
+                            $("#dislikes5").text(like);
+
+                        }).catch(function (err) {
+                            console.log(err);
+                        })
+                }).catch(function (err) {
+                    console.log(err);
+                });
+            })
+
+
+
+
+
         })
 
 
