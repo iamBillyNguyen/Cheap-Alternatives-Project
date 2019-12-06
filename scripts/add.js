@@ -35,8 +35,10 @@ $(document).ready(function () {
         };
 
         firebase.auth().onAuthStateChanged(function (bathroom) {
-            var id = "b" + increment;
-            db.collection("Bathroom").doc("b" + increment).set({
+            var id = "b" + increment._operand;
+            console.log(increment);
+            console.log(id);
+            db.collection("Bathroom").doc(id).set({
                 Like: 0,
                 Dislike: 0,
                 name: name,
