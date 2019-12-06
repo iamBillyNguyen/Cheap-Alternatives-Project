@@ -15,7 +15,9 @@ $(document).ready(function () {
         firebase.initializeApp(firebaseConfig);
     }
     var db = firebase.firestore();
-
+/**
+ * Hello
+ */
     $(".add-box").submit(function (e) {
         e.preventDefault();
         console.log("Hello");
@@ -62,17 +64,17 @@ $(document).ready(function () {
             db.collection("Bathroom").doc("b" + i).onSnapshot(function (docRef) {
                 $(".add-box").toggle("clip");
 
-                        var dislike = docRef.data().Dislike;
-                        var n = docRef.data().name;
-                        var loc = docRef.data().location;
-                        var rating = docRef.data().rating;
-                        var like = docRef.data().Like;
-                        console.log(n);
-                        $("#name5").text(n);
-                        $("#rating5").text(rating);
-                        $("#location5").text(loc);
-                        $("#likes5").text(like);
-                        $("#dislikes5").text(dislike);
+                var dislike = docRef.data().Dislike;
+                var n = docRef.data().name;
+                var loc = docRef.data().location;
+                var rating = docRef.data().rating;
+                var like = docRef.data().Like;
+                console.log(n);
+                $("#name5").text(n);
+                $("#rating5").text(rating);
+                $("#location5").text(loc);
+                $("#likes5").text(like);
+                $("#dislikes5").text(dislike);
 
 
             })
