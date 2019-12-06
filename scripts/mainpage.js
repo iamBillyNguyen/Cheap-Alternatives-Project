@@ -61,6 +61,13 @@ $(document).ready(function(){
 
     $("#add-bathroom").click(function(){
         $(".add-box").toggle("clip");
+        $(".add-box").css("display", "flex");
+    });
+
+    $("#logout").hover(function() {
+        $(this).css("border-bottom", "3px solid white");
+    }, function() {
+        $(this).css("border-bottom", "none");
     });
  
 
