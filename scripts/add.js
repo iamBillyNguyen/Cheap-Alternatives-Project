@@ -35,8 +35,10 @@ $(document).ready(function () {
         };
 
         firebase.auth().onAuthStateChanged(function (bathroom) {
-            var id = "b" + increment;
-            db.collection("Bathroom").doc("b" + increment).set({
+            var id = "b" + increment._operand;
+            console.log(increment);
+            console.log(id);
+            db.collection("Bathroom").doc("b5").set({
                 Like: 0,
                 Dislike: 0,
                 name: name,
@@ -46,9 +48,7 @@ $(document).ready(function () {
                 merge: true,
             }).then(function(docRef) {
                 $(".add-box").toggle("clip");
-
-                console.log(docRef);
-                db.collection("Bathroom").doc(id).get()
+                db.collection("Bathroom").doc("b5").get()
                     .then(function (doc) {
     
                         var n = doc.data().name;
