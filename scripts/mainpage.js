@@ -165,6 +165,8 @@ db.collection("Bathroom").doc("b4").onSnapshot(function (snap) {
 //     console.log("Current likes: ", snap.data().Like);
 // });
 
+
+
 setAddListener("1");
 setAddListener2("1");
 setAddListener("2");
