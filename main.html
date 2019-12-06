@@ -199,23 +199,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="/scripts/add.js"></script>
         <script src="scripts/mainpage.js"></script>
-        <script>
-            function showbathrooms() {
-                db.collection("Bathroom").get()
-                    .then(function (snap) {
-                        snap.forEach(function (doc) {
-                            var n = doc.data().name;
-                            var loc = doc.data().location;
-                            var rating = doc.data().rating;
-                            var like = doc.data().Like;
-                            var tr = $("<tr>").append('<td>' + n + '</th>').append('<td>' + loc + '</td>')
-                                .append('<td>' + rating + '</td>').append('<td>' + like + '</td>');
-                            $(".data").append(tr);
-                        });
-                    });
-            }
-            showbathrooms();
-        </script>
 </body>
 
 </html>
