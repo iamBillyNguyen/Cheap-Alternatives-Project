@@ -27,6 +27,7 @@ $(document).ready(function () {
         console.log(rating);
 
         var bathroom = {
+            Dislike: 0,
             Like: 1,
             location: location,
             name: name,
@@ -39,55 +40,43 @@ $(document).ready(function () {
             db.collection("increment").doc("counter").update({
                 val: increment
             }).then(function () {
-                db.collection("increment").doc("counter").get()
-                    .then(function (doc) {
+                db.collection("increment").doc("counter")
+                    .onSnapshot(function (doc) {
                         console.log(doc.data().val)
                         i = doc.data().val
-                    }).catch(function (err) {
-                        console.log(err);
+                        return i;
+
                     })
-            }).then(function () {
-                console.log("b" +i);
-
-                db.collection("Bathroom").doc("b" + i).set({
-                    Like: 0,
-                    Dislike: 0,
-                    name: name,
-                    location: location,
-                    rating: rating
-                }, {
-                    merge: true,
-                }).then(function (docRef) {
-                    $(".add-box").toggle("clip");
-                    db.collection("Bathroom").doc("b" + i).get()
-                        .then(function (doc) {
-
-                            var n = doc.data().name;
-                            var loc = doc.data().location;
-                            var rating = doc.data().rating;
-                            var like = doc.data().Like;
-                            console.log(n);
-                            $("#name5").text(n);
-                            $("#rating5").text(rating);
-                            $("#location5").text(loc);
-                            $("#likes5").text(like);
-                            $("#dislikes5").text(like);
-
-                        }).catch(function (err) {
-                            console.log(err);
-                        })
-                }).catch(function (err) {
-                    console.log(err);
-                });
+            });
+            console.log("b" + i);
+            db.collection("Bathroom").doc("b" + i).set({
+                Like: 0,
+                Dislike: 0,
+                name: name,
+                location: location,
+                rating: rating
+            }, {
+                merge: true,
             })
 
+            db.collection("Bathroom").doc("b" + i).onSnapshot(function (docRef) {
+                $(".add-box").toggle("clip");
+
+                        var dislike = docRef.data().Dislike;
+                        var n = docRef.data().name;
+                        var loc = docRef.data().location;
+                        var rating = docRef.data().rating;
+                        var like = docRef.data().Like;
+                        console.log(n);
+                        $("#name5").text(n);
+                        $("#rating5").text(rating);
+                        $("#location5").text(loc);
+                        $("#likes5").text(like);
+                        $("#dislikes5").text(dislike);
 
 
-
+            })
 
         })
-
-
-
     })
 });
