@@ -35,7 +35,9 @@ $(document).ready(function () {
             name: name,
             rating: rating
         };
-
+/**
+ * Bye
+ */
         firebase.auth().onAuthStateChanged(function (bathroom) {
             var increment = firebase.firestore.FieldValue.increment(1);
 
