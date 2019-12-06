@@ -8,6 +8,7 @@ body {
     background-repeat: no-repeat;
     font-family: roboto;
     height: 100%;
+    color: whitesmoke;
 }
 
 .container {
@@ -68,3 +69,6 @@ button {
 }
 
 
+form {
+  background-color: rgba(0, 0 , 0 , 0.5);
+}
