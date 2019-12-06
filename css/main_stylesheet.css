@@ -39,9 +39,6 @@ body {
     height: 100px;
     background-color: #72a5cc;
     padding: 10px 10px;
-    align-content: center;
-    justify-content: space-evenly;
-    align-self: center;
 }
 
 .header > h1 {
@@ -190,9 +187,9 @@ form > .input {
     width: 65%;
     height: 950px;
     z-index: 2;
-    justify-items: center;
-    justify-content: center; 
-    align-items: center;
+    /* justify-items: center;
+    justify-content: center; */
+    /* align-items: center; */
     /* overflow: scroll;  */
 }
 
