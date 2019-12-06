@@ -89,6 +89,7 @@ $(document).ready(function(){
         }
     })
 
+// First Bathroom
 db.collection("Bathroom").doc("b1").onSnapshot(function (snap) {
     console.log("Current data is ... ", snap.data().name);
     document.getElementById("name1").innerHTML = snap.data()
@@ -107,6 +108,7 @@ db.collection("Bathroom").doc("b1").onSnapshot(function (snap) {
 
 });
 
+//Second Bathroom
 db.collection("Bathroom").doc("b2").onSnapshot(function (snap) {
     console.log("Current data is ... ", snap.data().name);
     document.getElementById("name2").innerHTML = snap.data().name; //Get name value from document
@@ -124,6 +126,7 @@ db.collection("Bathroom").doc("b2").onSnapshot(function (snap) {
 
 });
 
+// Third Bathroom
 db.collection("Bathroom").doc("b3").onSnapshot(function (snap) {
     console.log("Current data is ... ", snap.data().name);
     document.getElementById("name3").innerHTML = snap.data().name; //Get name value from document
@@ -141,6 +144,7 @@ db.collection("Bathroom").doc("b3").onSnapshot(function (snap) {
 
 });
 
+//Fourth Bathroom
 db.collection("Bathroom").doc("b4").onSnapshot(function (snap) {
     console.log("Current data is ... ", snap.data().name);
     document.getElementById("name4").innerHTML = snap.data().name; //Get name value from document
@@ -156,24 +160,18 @@ db.collection("Bathroom").doc("b4").onSnapshot(function (snap) {
     console.log("Current likes: ", snap.data().Like);
 });
 
-// db.collection("Bathroom").doc("b5").onSnapshot(function (snap) {
-//     console.log("Current data is ... ", snap.data().name);
-//     document.getElementById("name5").innerHTML = snap.data()
-//         .name; //Get name value from document
-//     document.getElementById("rating5").innerHTML = snap.data()
-//         .rating; //Get rating value from document
-//     document.getElementById("location5").innerHTML = snap.data()
-//         .location; //Get location value from document
-
-//     document.getElementById("likes5").innerHTML = snap.data()
-//         .Like; //Get like
-//     document.getElementById("dislikes5").innerHTML = snap.data()
-//         .Dislike; //Get dislike
-//     console.log("Current likes: ", snap.data().Like);
-// });
+//New Added Bathroom
+db.collection("Bathroom").doc("b0").onSnapshot(function (snap) {
+    document.getElementById("likes5").innerHTML = snap.data()
+        .Like; //Get like
+    document.getElementById("dislikes5").innerHTML = snap.data()
+        .Dislike; //Get dislike
+    console.log("Current likes: ", snap.data().Like);
+});
 
 
-
+setAddListener("0");
+setAddListener2("0");
 setAddListener("1");
 setAddListener2("1");
 setAddListener("2");
@@ -182,6 +180,12 @@ setAddListener("3");
 setAddListener2("3");
 setAddListener("4");
 setAddListener2("4");
+
+
+//setAddListener3("1");
+//setAddListener3("2");
+//setAddListener3("3");
+//setAddListener3("4");
 
 
 function showLikes(n) {
@@ -206,7 +210,31 @@ function showDislikes(n) {
     })
 }
 
+//let comment = document.createElement("div");
+//(comment + n).appendChild(comment);
+//function showComments(n) {
+  //  firebase.auth().onAuthStateChanged(function (user) {
+    //    db.collection("Bathroom")
+      //  .doc("b" + n)
+        //    .onSnapshot(function (d) {
+          //      document.getElementById(("rating" + n).innerHTML = d.data().rating);
+            //});
+    //})
+//}
 
+//function setAddListener3(n) {
+  //  document.getElementById("smt-btn" + n).addEventListener("click", function (e) {
+
+    //    var like = db.collection("Bathroom").doc("b" + n);
+
+      //  e.preventDefault();
+
+        //rating.update({
+       //         showComments(n);
+        //});
+
+//    });
+//};
 function setAddListener(n) {
     document.getElementById("like-btn" + n).addEventListener("click", function (e) {
 
