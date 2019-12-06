@@ -170,7 +170,8 @@ db.collection("Bathroom").doc("b0").onSnapshot(function (snap) {
 });
 
 
-
+setAddListener("0");
+setAddListener2("0");
 setAddListener("1");
 setAddListener2("1");
 setAddListener("2");
@@ -179,8 +180,7 @@ setAddListener("3");
 setAddListener2("3");
 setAddListener("4");
 setAddListener2("4");
-setAddListener("0");
-setAddListener2("0");
+
 
 //setAddListener3("1");
 //setAddListener3("2");

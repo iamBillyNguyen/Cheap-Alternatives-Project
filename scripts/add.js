@@ -30,7 +30,7 @@ $(document).ready(function () {
 
         var bathroom = {
             Dislike: 0,
-            Like: 1,
+            Like: 0,
             location: location,
             name: name,
             rating: rating
