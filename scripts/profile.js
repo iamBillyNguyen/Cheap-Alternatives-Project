@@ -23,13 +23,16 @@ $(document).ready(function () {
                             phoneNumber: formPhone
                         }, {
                             merge: true
+                        }).then( function() {
+                            window.location = "../main.html";
                         });
-                    window.location = "../main.html";
+                       
                 })
-
+                
             })
             .catch(function (err) {
                 console.log(err);
             })
+            
     });
 });
