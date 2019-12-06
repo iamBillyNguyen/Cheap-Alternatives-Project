@@ -20,7 +20,8 @@ $(document).ready(function () {
     $(".add-box").submit(function (e) {
         e.preventDefault();
         console.log("Hello");
-        var location = $("#location").val();
+        var location = $("#input[name=q12_3]:checked").val();
+        
         var name = $("#name").val();
         var rating = $("#rating").val();
         console.log(location);
